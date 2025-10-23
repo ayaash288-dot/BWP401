@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="page_title">دليل فعاليات المدينة</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Optional: better alignment for flags */
+        
+        .lang-switcher a {
+            cursor: pointer;
+        }
+        
+        .lang-switcher img {
+            width: 25px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    
+                    <span data-translate-key="navbar_brand">دليل فعاليات المدينة</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html" data-translate-key="nav_home">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html" data-translate-key="nav_events">الفعاليات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-translate-key="nav_about">عن الدليل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" data-translate-key="nav_contact">اتصل بنا</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center lang-switcher ms-lg-3">
+                            <a class="nav-link p-1 mx-1" onclick="setLanguage('ar')"><img src="https://flagcdn.com/w40/sy.png" alt="العربية"></a>
+                            <a class="nav-link p-1 mx-1" onclick="setLanguage('en')"><img src="https://flagcdn.com/w40/us.png" alt="English"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <img src="img/فعاليات.png" alt="شعار دليل فعاليات المدينة" >
+
+        </nav>
+    </header>
+
+    <div class="text-center my-3">
+       <a href="#end" id="UP" class="GO">Go To End Page</a>
+    </div>
+
+
+    <main class="container my-5">
+
+        <p class="GO">
+            غياث العقباني(gheath_317787) <br>     
+            كاترين عدوان(katrin_284313)      <br>   
+            نايا العيد(naya_238234)      <br>
+            آية الأشقر(aya_288915)      
+        </p>
+        <label for="text" class="display-4 fw-bold text-primary" data-translate-key="hero_title">فعاليات موجودة بجوارك!.. تعرف عليها </label>
+        <label for="text" class="lead" data-translate-key="hero_subtitle">المنصة الأقوى و الأشمل التي توفر لك جميع أنواع الفعاليات</label><br><br>
+                    <div class="col-md-6">
+                    <a href="events.html" class="btn btn-primary btn-lg mt-3" data-translate-key="hero_button">استعرض جميع الفعاليات</a><br>
+                </div><br>
+        <section class="hero-section mb-5">
+            <div class="row align-items-center">
+                
+                
+                    <div id="eventsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/تنوع.jpg" class="d-block w-100 rounded" alt="فعالية ثقافية" data-translate-alt="carousel_alt_1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/حلويات.jpg" class="d-block w-100 rounded" alt="فعالية رياضية" data-translate-alt="carousel_alt_2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/معرضضض.jpg" class="d-block w-100 rounded" alt="فعالية فنية" data-translate-alt="carousel_alt_3">
+                            </div>
+                        </div>
+                    </div>
+              
+            </div>
+        </section>
+       <label for="text" class="TITLE_LAB">تصنيفات سريعة</label>
+        <section class="quick-categories mb-5">
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <button class="btn btn-outline-primary category-filter" data-category="all" data-translate-key="cat_all">الكل</button>
+                <button class="btn btn-outline-primary category-filter" data-category="ثقافة" data-translate-key="cat_culture">ثقافة</button>
+                <button class="btn btn-outline-primary category-filter" data-category="رياضة" data-translate-key="cat_sports">رياضة</button>
+                <button class="btn btn-outline-primary category-filter" data-category="موسيقى" data-translate-key="cat_music">موسيقى</button>
+                <button class="btn btn-outline-primary category-filter" data-category="تعليم" data-translate-key="cat_education">تعليم</button>
+                <button class="btn btn-outline-primary category-filter" data-category="ترفيه" data-translate-key="cat_entertainment">ترفيه</button>
+            </div>
+        </section>
+        
+        <section class="latest-events">
+            <label  for="text" class="TITLE_LAB">أحدث الفعاليات</label>
+            <div class="row" id="latestEvents">
+            </div>
+        </section>
+
+
+        <section class="featured-events mb-5">
+            <label for="text" class="TITLE_LAB">فعاليات بارزة هذا الأسبوع</label>
+            <div class="row" id="featuredEvents">
+            </div>
+        </section>
+
+        
+         <div class="text-center my-3">
+       <a href="#UP" class="GO">Go To Up Page</a>
+    </div>
+        
+    </main>
+
+    <footer class="FOO">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 data-translate-key="footer_quick_links">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white" data-translate-key="nav_home">الرئيسية</a></li>
+                        <li><a href="events.html" class="text-white" data-translate-key="nav_events">الفعاليات</a></li>
+                        <li><a href="about.html" class="text-white" data-translate-key="nav_about">عن الدليل</a></li>
+                        <li><a href="contact.html" class="text-white" data-translate-key="nav_contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-translate-key="footer_contact_us">تواصل معنا</h5>
+                    <p data-translate-key="footer_email">البريد الإلكتروني: EV_City@gmail.com</p>
+                    <p data-translate-key="footer_phone">الهاتف: 031366648</p>
+
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/groups/762902447895479/" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p   id="end" class="mb-0" data-translate-key="footer_copyright">© 2026-2025 جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        const translations = {
+            ar: {
+                page_title: "دليل فعاليات المدينة",
+                navbar_brand: "دليل فعاليات المدينة",
+                nav_home: "الرئيسية",
+                nav_events: "الفعاليات",
+                nav_about: "عن الدليل",
+                nav_contact: "اتصل بنا",
+                hero_title: "فعاليات موجودة بجوارك!.. تعرف عليها ",
+                hero_subtitle: "المنصة الأقوى و الأشمل التي توفر لك جميع أنواع الفعاليات",
+                hero_button: "استعرض جميع الفعاليات",
+                carousel_alt_1: "فعالية ثقافية",
+                carousel_alt_2: "فعالية رياضية",
+                carousel_alt_3: "فعالية فنية",
+                featured_events_title: "فعاليات بارزة هذا الأسبوع",
+                quick_categories_title: "تصنيفات سريعة",
+                cat_all: "الكل",
+                cat_culture: "ثقافة",
+                cat_sports: "رياضة",
+                cat_music: "موسيقى",
+                cat_education: "تعليم",
+                cat_entertainment: "ترفيه",
+                latest_events_title: "أحدث الفعاليات",
+                team_title: "فريق العمل",
+                team_member_1_name: "آية الأشقر",
+                team_member_1_role: "مطورة الواجهة الأمامية",
+                team_member_1_desc: "مسؤولة عن تصميم وتطوير واجهة المستخدم وتجربة المستخدم.",
+                team_member_2_name: "كاترين عدوان ",
+                team_member_2_role: "مصممة جرافيك",
+                team_member_2_desc: "مسؤولة عن التصميم البصري والشعارات والهوية البصرية للمنصة.",
+                team_member_3_name: "نايا العيد",
+                team_member_3_role: " منسقة الصفحات",
+                team_member_3_desc: "مسؤولة عن مراجعة المحتوى وتحديث معلومات الفعاليات والأنشطة.",
+                 team_member_4_name: "غياث العقباني",
+                team_member_4_role: " مطور الواجهة الخلفية",
+                team_member_4_desc: "مسؤول عن تصميم وتطوير واجهة المستخدم وتجربة المستخدم.",
+                footer_platform_desc: "منصة شاملة للتعريف بجميع الفعاليات والأنشطة في المدينة.",
+                footer_quick_links: "روابط سريعة",
+                footer_contact_us: "تواصل معنا",
+                footer_email: "البريد الإلكتروني: info@cityevents.com",
+                footer_phone: "الهاتف: 0123456789",
+                footer_copyright: "© 2025 دليل فعاليات المدينة. جميع الحقوق محفوظة.",
+            },
+            en: {
+                page_title: "City Events Guide",
+                navbar_brand: "City Events Guide",
+                nav_home: "Home",
+                nav_events: "Events",
+                nav_about: "About",
+                nav_contact: "Contact Us",
+                hero_title: "Events happening near you!.. Discover them",
+                hero_subtitle: "The most powerful and comprehensive platform that offers all types of events",
+                hero_button: "Browse All Events",
+                carousel_alt_1: "Cultural Event",
+                carousel_alt_2: "Sports Event",
+                carousel_alt_3: "Art Event",
+                featured_events_title: "Featured Events This Week",
+                quick_categories_title: "Quick Categories",
+                cat_all: "All",
+                cat_culture: "Culture",
+                cat_sports: "Sports",
+                cat_music: "Music",
+                cat_education: "Education",
+                cat_entertainment: "Entertainment",
+                latest_events_title: "Latest Events",
+                team_title: "Our Team",
+                team_member_1_name: " Aya Alashkar",
+                team_member_1_role: "Frontend Developer",
+                team_member_1_desc: "Responsible for designing and developing the user interface and user experience.",
+                team_member_2_name: " Katrin Adwan",
+                team_member_2_role: "Graphic Designer",
+                team_member_2_desc: "Responsible for visual design, logos, and the platform's visual identity.",
+                team_member_3_name: " Naya Aled",
+                team_member_3_role: "Content Manager",
+                team_member_3_desc: "Responsible for content review and updating event and activity information.",
+                team_member_4_name: " Gheath Alakabane",
+                team_member_4_role: "BackEnd Developer ",
+                team_member_4_desc: "Responsible for designing and developing the user interface and user experience.",
+                footer_platform_desc: "A comprehensive platform to introduce all events and activities in the city.",
+                footer_quick_links: "Quick Links",
+                footer_contact_us: "Contact Us",
+                footer_email: "Email: info@cityevents.com",
+                footer_phone: "Phone: 0123456789",
+                footer_copyright: "© 2025 City Events Guide. All rights reserved.",
+            }
+        };
+
+        function setLanguage(lang) {
+            // Get all elements that need translation
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Translate alt attributes for images
+            document.querySelectorAll('[data-translate-alt]').forEach(element => {
+                const key = element.getAttribute('data-translate-alt');
+                if (translations[lang] && translations[lang][key]) {
+                    element.setAttribute('alt', translations[lang][key]);
+                }
+            });
+
+            // Set HTML lang and dir attributes
+            const html = document.documentElement;
+            html.setAttribute('lang', lang);
+            html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+            // Save the language choice in localStorage
+            localStorage.setItem('language', lang);
+        }
+
+        // On page load, check for saved language or default to Arabic
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'ar';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+
+</html>
